@@ -6,10 +6,12 @@ Start the service
 Use command line tool to test the service:
 
 Open a window to run this:
+```
   mosquitto_sub.exe -d -t hello/world
-
+```
 Open another window to run this:
+```
   mosquitto_pub.exe -d -t hello/world -m "you are so cool"
-
+```
 
 
