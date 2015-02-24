@@ -1,4 +1,4 @@
-# pi
+# pi - mqtt - web app 
 
 ### Install a MQTT broker
 
@@ -74,7 +74,7 @@ var server = app.listen(3000, function () {
  node sub.js
 ```
 
-### Create html page show the messages from MQTT broker
+### Create an html page to show the messages from MQTT broker
 
 ```html
 <html>
