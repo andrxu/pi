@@ -66,7 +66,7 @@ var server = app.listen(3000, function () {
 //client.end();
 
 ```
-node sub.js
+> node sub.js
 
 ### Create html page show the messages from MQTT broker
 
