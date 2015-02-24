@@ -17,6 +17,9 @@ Open another window to run this:
 ```
 
 ### Create and run a nodejs client service
+
+* Create a file with following code and save it as "sub.js"
+
 ```js
 var sys = require('sys');
 var mqtt = require('mqtt');
@@ -66,7 +69,10 @@ var server = app.listen(3000, function () {
 //client.end();
 
 ```
-> node sub.js
+* Start the node service:
+```
+ node sub.js
+```
 
 ### Create html page show the messages from MQTT broker
 
