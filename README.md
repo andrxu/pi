@@ -7,11 +7,11 @@
 
 ### Use the command line tools to test the service
 
-Open a window to run this:
+* Open a window to run this:
 ```
   mosquitto_sub.exe -d -t hello/world
 ```
-Open another window to run this:
+* Open another window to run this:
 ```
   mosquitto_pub.exe -d -t hello/world -m "you are so cool"
 ```
@@ -76,5 +76,39 @@ var server = app.listen(3000, function () {
 
 ### Create html page show the messages from MQTT broker
 
+```html
+<html>
+<head>
+<script type="text/javascript" src="http://cdn.socket.io/socket.io-1.3.4.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+    var socket = io.connect("http://localhost:5000");
+    socket.on('connect', function () {
+        socket.on('mqtt', function (msg) {
+            var elmarr = msg.topic.split("/");
+            var elm = elmarr[3];
+            console.log(msg.topic + ' ' + msg.payload);
+            $('#returntemp').html(msg.payload);
+        });
+        socket.emit('subscribe', { topic: 'hello/world' });
+    });
+</script>
+</head>
+<body>
+<h1>Real Time Messaging Between pi and Web app</h1>
+<table style="width: 500px;">
+    <tbody>
+        <tr>
+            <td colspan="2"><center>Status</center></td>
+        </tr>
+        <tr>
+            <td>Return temp</td>
+            <td id="returntemp"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
 
+```
 
