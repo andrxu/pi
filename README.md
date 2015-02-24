@@ -11,11 +11,11 @@ Use the command line tools to test the service
 
 * Open a window to run this:
 ```
-  mosquitto_sub.exe -d -t hello/world
+  C:\Program Files (x86)\mosquitto>mosquitto_sub.exe -d -t hello/world
 ```
 * Open another window to run this:
 ```
-  mosquitto_pub.exe -d -t hello/world -m "you are so cool"
+  C:\Program Files (x86)\mosquitto>mosquitto_pub.exe -d -t hello/world -m "you are so cool"
 ```
 
 Create and run a nodejs client service
