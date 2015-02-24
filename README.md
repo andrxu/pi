@@ -17,7 +17,7 @@ Open another window to run this:
 ```
 
 ### Create and run a nodejs client service
-```
+```js
 var sys = require('sys');
 var mqtt = require('mqtt');
 var client = mqtt.connect('mqtt://localhost');
