@@ -111,4 +111,12 @@ var server = app.listen(3000, function () {
 </html>
 
 ```
+* Save the page as mtqq_sub.html and put it somewhere under your local web site directory
+* Load it from browser, for example, http://localhost/mtqq_sub.html
+* Use command line tool to send messages 
+```
+ mosquitto_pub.exe -d -t hello/world -m "you are so cool"
+```
+* mtqq_sub.html should display the message you just sent
+
 
