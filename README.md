@@ -1,11 +1,13 @@
 # pi - mqtt - web app 
 
-### Install a MQTT broker
+Install a MQTT broker
+---------------------
 
 1. Download and install mosquitto from http://mosquitto.org/download/
 2. Start the service
 
-### Use the command line tools to test the service
+Use the command line tools to test the service
+---------------------
 
 * Open a window to run this:
 ```
@@ -16,7 +18,8 @@
   mosquitto_pub.exe -d -t hello/world -m "you are so cool"
 ```
 
-### Create and run a nodejs client service
+Create and run a nodejs client service
+---------------------
 
 * Create a file with following code and save it as "sub.js"
 
@@ -74,7 +77,8 @@ var server = app.listen(3000, function () {
  node sub.js
 ```
 
-### Create an html page to show the messages from MQTT broker
+Create an html page to show the messages from MQTT broker
+---------------------
 
 ```html
 <html>
