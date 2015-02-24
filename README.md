@@ -1,9 +1,9 @@
 # pi
 
-Download and install MQTT broker mosquitto from http://mosquitto.org/download/
+## Download and install MQTT broker mosquitto from http://mosquitto.org/download/
 Start the service
 
-Use command line tool to test the service:
+## Use the command line tools to test the service:
 
 Open a window to run this:
 ```
