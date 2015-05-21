@@ -22,11 +22,11 @@ Run publishing script from the device
 ---------------------
 * You may need to turn off Windows Firewall or open a port for the MQTT communication
 * node "check_temp.js"
-* 
+
 ```js
 var sys = require('sys');
 var mqtt = require('mqtt');
-var client = mqtt.connect('mqtt://192.168.1.3:1883');
+var client = mqtt.connect('mqtt://192.168.1.4:1883'); //replace this with your MQTT broker's address
 
 client.subscribe('hello/world');
 
@@ -77,7 +77,6 @@ io.sockets.on('connection', function (socket) {
     });
 });
 
-
 client.on('message', function (topic, message) {
     console.log(message.toString());
     sys.puts(topic + '=' + message);
@@ -85,7 +84,6 @@ client.on('message', function (topic, message) {
         'topic': String(topic),
         'payload': String(message)
     });
-
 });
 
 var express = require('express')
