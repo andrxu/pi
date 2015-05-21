@@ -4,7 +4,7 @@ Install a MQTT broker
 ---------------------
 
 1. Download and install mosquitto from http://mosquitto.org/download/
-2. Start the Mosquitto Broker service (from services.msc)
+2. Start the "Mosquitto Broker" service (from services.msc)
 
 Use the command line tools to test the service
 ---------------------
