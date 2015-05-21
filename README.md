@@ -22,6 +22,9 @@ Run publishing script from the device
 ---------------------
 * You may need to turn off Windows Firewall or open a port for the MQTT communication
 * node "check_temp.js"
+```
+pi@raspberrypi:~/node-emitter$/node pub_temp.js
+```
 
 ```js
 var sys = require('sys');
