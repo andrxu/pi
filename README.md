@@ -18,6 +18,41 @@ Use the command line tools to test the service
   C:\Program Files (x86)\mosquitto>mosquitto_pub.exe -d -t hello/world -m "you are so cool"
 ```
 
+Run publishing script from the device
+---------------------
+* You may need to turn off Windows Firewall or open a port for the MQTT communication
+* node "check_temp.js"
+* 
+```js
+var sys = require('sys');
+var mqtt = require('mqtt');
+var client = mqtt.connect('mqtt://192.168.1.3:1883');
+
+client.subscribe('hello/world');
+
+console.log('mqtt client started...');
+
+var in_temp = require('./lib/in/temp/DS18B20.js');
+var data, publisher;
+
+data = {};
+publisher = new Publisher();
+
+setInterval(function () {
+    in_temp.check(data, publisher, function (data, publisher) {});
+}, 1000);
+
+function Publisher() {
+    this.publish = publishInfo;
+}
+
+function publishInfo(data, obj) {
+    console.log('sending data out');
+    client.publish('hello/world', JSON.stringify(obj));
+    console.log(JSON.stringify(obj));
+}
+```
+
 Create and run a nodejs client service
 ---------------------
 
